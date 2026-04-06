@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberJob Scout — Offline AI Chatbot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ZONE 1: Header -->
+  <header>
+    <div class="logo-icon">🛡️</div>
+    <div class="logo-text">
+      <h1>CyberJob Scout</h1>
+      <p>Cyber Security Internships • India</p>
+    </div>
+    <span class="offline-badge">✅ WORKS OFFLINE</span>
+  </header>
+
+  <!-- ZONE 2 & 3: Main layout -->
+  <div class="main-layout">
+
+    <!-- LEFT SIDEBAR -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-title">📋 Scraped Listings</span>
+        <span class="count-badge" id="cnt">10 jobs</span>
+      </div>
+      <div class="sidebar-search">
+        <input type="text" placeholder="🔍  Filter jobs…" oninput="filterSidebar(this.value)">
+      </div>
+      <div class="job-scroll" id="jobList"></div>
+    </div>
+
+    <!-- RIGHT CHAT AREA -->
+    <div class="chat-area">
+      <div class="chat-msgs" id="chatMsgs"></div>
+
+      <!-- Quick-filter chips -->
+      <div class="chips">
+        <span class="chip" onclick="ask('Show all jobs')">All jobs</span>
+        <span class="chip" onclick="ask('Jobs in Bengaluru')">Bengaluru</span>
+        <span class="chip" onclick="ask('Jobs in Mumbai')">Mumbai</span>
+        <span class="chip" onclick="ask('SOC or SIEM roles')">SOC / SIEM</span>
+        <span class="chip" onclick="ask('Python skills required')">Python</span>
+        <span class="chip" onclick="ask('Penetration testing jobs')">Pen Testing</span>
+        <span class="chip" onclick="ask('LinkedIn jobs only')">LinkedIn</span>
+        <span class="chip" onclick="ask('What skills should I learn?')">Skills advice</span>
+      </div>
+
+      <!-- Input bar -->
+      <div class="input-wrap">
+        <div class="input-row">
+          <textarea class="cin" id="cin"
+            placeholder="Search jobs, skills, companies, cities…"
+            rows="1"
+            onkeydown="handleKey(event)"
+            oninput="rsz(this)"></textarea>
+          <button class="sbtn" onclick="send()">➤</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
